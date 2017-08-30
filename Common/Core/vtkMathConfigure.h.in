@@ -24,6 +24,8 @@
 #include <cmath>
 #include <float.h> // for _isnan, _finite on Win32
 
+#ifndef __GCCXML__
+
 #cmakedefine VTK_HAS_ISNAN
 #cmakedefine VTK_HAS_STD_ISNAN
 #cmakedefine VTK_HAS__ISNAN
@@ -33,6 +35,8 @@
 #cmakedefine VTK_HAS_STD_ISFINITE
 #cmakedefine VTK_HAS_FINITE
 #cmakedefine VTK_HAS__FINITE
+
+#endif
 
 // Check for undetected macro versions of isnan(), isinf(), isfinite()
 #if !defined(VTK_HAS_ISNAN) && defined(isnan)
